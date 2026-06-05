@@ -371,6 +371,15 @@
             font-size: 18px;
             color: var(--bg-light);
         }
+
+        .personnel-img {
+    width: 120px;               /* Sets a clean width for a profile picture */
+    height: 120px;              /* Sets an equal height to keep it a square */
+    object-fit: cover;          /* Prevents the person's face from stretching or distortion */
+    border-radius: 50%;         /* Makes the picture a perfect circle! (Remove this line if you want a square) */
+    margin-bottom: 15px;        /* Pushes the text down slightly so it's not crowded */
+    border: 3px solid #00695C;  /* Optional: Adds a nice border using your medium-dark green palette */
+}
         @media (max-width: 768px) {
             .services-split, .lower-grid, .stats-container {
                 flex-direction: column;
@@ -450,6 +459,7 @@
     <section class="container">
         <div class="lower-grid">
             <div class="grid-card">
+                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=300&h=300" alt="Doctor Profile" class="personnel-img">
                 <p style="text-transform: uppercase; font-size: 12px; font-weight: bold; color:var(--primary);">For Healthcare Professionals</p>
                 <h3>Join PLUS</h3>
                 <p>Collaborate with a modern medical network to deliver world-class virtual care, manage your clinical schedules seamlessly, and reach more patients in need globally.</p>
