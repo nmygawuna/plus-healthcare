@@ -91,6 +91,11 @@
              font-size:14px;
              letter-spacing:2px;
         }
+
+        .center-logo-img{
+            width:40px;
+            height:40px;
+        }
         .dropdown-container{
             position: relative;
         }
@@ -178,18 +183,8 @@
             font-weight: 600;
         }
 
-        .services-split{
-            display: flex !important;
-            flex-direction: row !important;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-            position: relative;
-            margin-bottom: 20px;
-        }
-
         .service-card{
-            background: var(--bg-card);
+            background:#F0F8FF;
             flex: 1;
             padding: 40px;
             border-radius: 12px;
@@ -197,10 +192,19 @@
             text-align: center;
             border-top: 5px solid var(--primary);
         }
-        
+        .service-card-emergency{
+         background:#FFEBEE;
+            flex: 1;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            border-top: 5px solid var(--primary);
+        }
         .service-emergency{
             border-top: 5px solid var(--secondary);
         }
+            
 
         .emergency{
             border-top: 5px solid var(--secondary);
@@ -261,7 +265,8 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            display: flex;
+            display: grid;
+            grid-row: 1;
             align-items: center;
             justify-content: center;
             font-weight: bold;
@@ -269,16 +274,20 @@
             z-index: 10;
             position: absolute;
             left: 50%;
+            top: 50%;
             transform: translate(-50%, -50%);
-            
         }
 
-        .center-logo-img{
-            width:60px;
-            height:60px;
-            border-radius: 50%;
+        .lower-grid-services{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 30px;
+            margin-bottom: 60px;
+            margin-top: 60px;
+            position: relative;
+            width: 100%;
         }
-
         .lower-grid{
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -288,10 +297,28 @@
         }
 
         .grid-card{
-            background: var(--bg-card);
+            background: #F0F8FF;
             padding: 40px;
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid var(--primary);
+        }
+
+        .grid-card-donations{
+            background: #E8F5E9;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid  #00695C;
+        }
+
+        .btn-donations{
+            background: #00695C;
+            color: white;
+        }
+
+        .btn-donations:hover{
+            background: #004D40;
         }
 
         .grd-card h3{
@@ -393,7 +420,7 @@
     </section>
     <section class="container">
         <h2 class="section-title">Two Main Services, One Goal: Your Health</h2>
-        <div class="services-split">
+        <div class="lower-grid-services">
             <div class="service-card">
                 <i class="fa-solid fa-laptop-medical card-icon"></i>
                 <h3>Online Healthcare</h3>
@@ -404,19 +431,20 @@
                 </ul>
                 <a href="#" class="btn btn-primary">Get started <i class="fa-solid fa-arrow-right"></i></a>
             </div>
-        </div>
+        
 
-        <div class="center-logo"><img class="center-logo-img"  src="logo.png"></div>
+            <div class="center-logo"><img class="center-logo-img"  src="logo.png"></div>
 
-        <div class="service-card emergency">
-            <i class="fa-solid fa-bell-on card-icon"></i>
-            <h3>Emergency Response</h3>
-            <ul class="bullet-list">
-                <li>Instant Dispatch</li>
-                <li>Real-time Tracking</li>
-                <li>Paramedic Support</li>
-            </ul>
-            <a href="#" class="btn btn-secondary">Request Help Now<i class="fa-solid fa-arrow-right"></i></a>
+            <div class="service-card-emergency emergency">
+                <i class="fa-solid fa-bell-on card-icon"></i>
+                <h3>Emergency Response</h3>
+                <ul class="bullet-list">
+                    <li>Instant Dispatch</li>
+                    <li>Real-time Tracking</li>
+                    <li>Paramedic Support</li>
+                </ul>
+                <a href="#" class="btn btn-secondary">Request Help Now<i class="fa-solid fa-arrow-right"></i></a>
+            </div>
         </div>
     </section>
     <section class="container">
@@ -427,11 +455,11 @@
                 <p>Collaborate with a modern medical network to deliver world-class virtual care, manage your clinical schedules seamlessly, and reach more patients in need globally.</p>
                 <a href="#" class="btn btn-outline">Join as Professional<i class="fa-solid fa-arrow-right"></i></a>
             </div>
-            <div class="grid-card">
+            <div class="grid-card-donations">
                 <p style="text-transform: uppercase; font-size: 12px; font-weight: bold; color: var(--primary);">Make an Impact</p>
                 <h3>Donations</h3>
                 <p>Support our global mission to provide accessible critical care resources, emergency vehicles, and premium telehealth medical equipment to communities in underserved regions.</p>
-                <a href="#" class="btn btn-secondary">Donate now<i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#" class="btn btn-donations">Donate now<i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
