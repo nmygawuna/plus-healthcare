@@ -252,6 +252,18 @@
       .back-link:hover {
         text-decoration: underline;
       }
+
+      @media (max-width: 768px) {
+            .services-split, .lower-grid, .stats-container {
+                flex-direction: column;
+                grid-template-columns: 1fr;
+            }
+            .center-logo {
+                display: none; 
+            }
+            .nav-links {
+                display: none; 
+            }
     </style>
   </head>
   <body>
