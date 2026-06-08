@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Donations</title>
+    <style>
+      :root {
+            --primary: #007a87;
+            --primary-dark: #005a64;
+            --secondary: #ff6f61;
+            --secondary-dark: #e05346;
+            --text-main: #2d3748;
+            --text-muted: #718096;
+            --bg-light: #f7fafc;
+            --bg-card: #ffffff;
+        }
+
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background: var(--bg-card);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        
+
+
+        .nav-links{
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links a{
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover{
+            color: var(--primary);
+        }
+
+        
+        .logo{
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+        
+        .logo img{
+            width:50px;
+            height:50px;
+        }
+        .logo-text h2{
+            color: var(--primary);
+            margin:0;
+            font-size:28px;
+        }
+        
+        .logo-text p{
+             color: var(--text-main);
+             margin:0;
+             font-size:14px;
+             letter-spacing:2px;
+        }
+
+        .center-logo-img{
+            width:40px;
+            height:40px;
+        }
+        .dropdown-container{
+            position: relative;
+        }
+        .dropdown-menu{
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--bg-card);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
+            list-style: none;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        .dropdown-menu li a {
+            color: var(--text-main);
+            padding: 10px 20px;
+            display: block;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .dropdown-container li a:hover{
+            background-color: var(--bg-light);
+            color: var(--primary);
+        }
+
+        .dropdown-container:hover .dropdown-menu{
+            display: block;
+        }
+
+        .arrow-icon{
+            font-size: 12px;
+            margin-left: 5px;
+            color: var(--text-muted);
+            transition: transform 0.3s;
+        }
+        .dropdown-container:hover .arrow-icon{
+            transform: rotate(180deg);
+            color: var(--primary);
+        }
+        .donation-container {
+           max-width: 500px;
+           margin: 40px auto;
+           padding: 0 20px;
+        }
+        .donation-box {
+          background: white;
+          border-radius: 16px;
+          padding: 30px 25px;
+          text-align: center;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .donation-box h2 {
+            font-size: 1.5rem;
+            color: #1e293b;
+            margin-bottom: 6px;
+        }
+        .donation-box .subtitle {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        .amount-input {
+          width: 100%;
+          padding: 12px 16px;
+          border: 2px solid #e2e8f0;
+          border-radius: 12px;
+          font-size: 1rem;
+          outline: none;
+          margin-bottom: 20px;
+        }
+       .amount-input:focus {
+          border-color: #2563eb;
+        }
+      .donate-btn {
+          background: #005a64;
+          color: white;
+          border: none;
+          padding: 12px 28px;
+          border-radius: 30px;
+          font-weight: 600;
+          font-size: 0.95rem;
+          cursor: pointer;
+          margin-bottom: 25px;
+        }
+        .payment-methods {
+           text-align: left;
+           border-top: 2px dashed #e2e8f0;
+           padding-top: 20px;
+           margin-top: 10px;
+        }
+       .payment-methods h3 {
+          font-size: 1rem;
+          color: #1e293b;
+          margin-bottom: 15px;
+        }
+        .method-item {
+          background: #f8fafc;
+          border: 1px solid #e8ecf0;
+          border-radius: 10px;
+          padding: 12px 14px;
+          margin-bottom: 10px;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+       .method-item i {
+          color: #2563eb;
+          font-size: 1.2rem;
+        }
+        .method-info strong {
+           display: block;
+           font-size: 0.9rem;
+           color: #1e293b;
+        }
+        .method-info span {
+           font-size: 0.8rem;
+           color: #64748b;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="logo.png" alt="PLUS Health Logo">
+                    <div class="logo-text">
+                        <h2>PLUS</h2>
+                        <p>Healthcare</p>
+                    </div>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li  class="dropdown-container">
+                        <a href="#"  class="dropdown-trigger">Services<i class="fa-solid fa-chevron-down arrow-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Consultations</a></li>
+                            <li><a href="#">Emergency</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Subscription</a></li>
+                    <li><a href="#" class="contact-btn">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="donation-container">
+  <div class="donation-box">
+    <h2>Support Our Mission</h2>
+    <p class="subtitle">
+      Your donation helps us provide better healthcare to those in need. Every contribution counts.
+    </p>
+    <input type="number" class="amount-input" placeholder="Enter amount (e.g., 500)" min="1">
+    <button class="donate-btn" type="button">Donate Now</button>
+    <div class="payment-methods">
+      <h3><i class="fas fa-university"></i> How to Send Your Donation</h3>
+      <p style="font-size:0.8rem; color:#94a3b8; margin-bottom:15px;">Details will be updated soon.</p>
+      <div class="method-item">
+        <i class="fas fa-building-columns"></i>
+        <div class="method-info">
+          <strong>Bank Transfer</strong>
+          <span>Account: XXXX-XXXX-XXXX • Bank: (coming soon)</span>
+        </div>
+      </div>
+      <div class="method-item">
+        <i class="fas fa-mobile-screen-button"></i>
+        <div class="method-info">
+          <strong>Mobile Money</strong>
+          <span>Phone: +XXX XXX XXX XXX (not yet active)</span>
+        </div>
+      </div>
+      <div class="method-item">
+        <i class="fas fa-paypal"></i>
+        <div class="method-info">
+          <strong>PayPal</strong>
+          <span>donate@yourclinic.com (placeholder)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </body>
+</html>
