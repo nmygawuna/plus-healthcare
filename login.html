@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Login</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width = device - width, initial - scale = 1.0">
+		<style>
+			body{
+				background-color:  #F0F8FF;
+				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+				color: var(--text-main);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				min-height: 100vh;
+				margin: 0;
+				padding: 20px;
+			}
+			.form-containers{
+				width: 100%;
+				max-width: 500px;
+				padding: 30px;
+				border-radius: 10px;
+				min-height: 90vh;
+				border: 2px solid #e2e8f0;
+				background-color:  white;
+				box-sizing: border-box;
+			}
+			label{
+				display: block;
+				margin-bottom: 8px;
+				border-radius: 5px;
+			}
+			input{
+				width: 100%;
+				padding: 12px;
+				box-sizing: border-box;
+				border-radius: 5px;
+				border-color: antiquewhite;
+			}
+			.name-row{
+				display: flex;
+				gap: 10px;
+			}
+			.name-row, .form-containers{
+				flex: 1;
+			}
+			.button{
+				width: calc(100%);
+				margin: 20px 0px;
+				cursor: pointer;
+				font-size: 16px;
+				box-sizing: border-box;
+				background-color: #00695c;
+				color: white;
+				border-radius: 5px;
+				padding: 10px 5px 5px 5px;
+			}
+			.wellcome{
+				margin-top: 0%;
+				margin-bottom: 25px;
+			}
+			.title{
+				margin-top: 0%;
+				margin-bottom: 2px;
+			}
+			.logoh1{
+				display: flex; 
+				margin: 0%;
+			}
+			.logo{
+				width: auto;
+				height: 45px;
+				display: flex;
+				align-items: flex-end;
+				margin-bottom: 2px;
+			}
+			.backToHome{
+				color: #00695c;
+				width: calc(100%);
+				margin: 20px 0px;
+				cursor: pointer;
+				font-size: 16px;
+				box-sizing: border-box;
+				background-color: transparent;
+				border-color: transparent;
+				text-decoration: underline;
+				margin-top: 0%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="form-containers">
+			<div class="logoh1">
+				<img class="logo" src="logo.png" alt="logo">
+				<h1 class="title">Sign In</h1>
+			</div>
+			<p class="wellcome">wellcome! let's creat your account.</p>
+			<form>
+				<div class="name-row" >
+					<div class="form-group">
+						<label for="firstname">First Name &#58;</label>
+						<input type="text" id="firstname" name="firstname" required>
+					</div>
+					<div class="form-group">
+						<label for="middlename">Middle Name &#58; </label>
+						<input type="text" id="middlename" name="middlename" required>
+					</div>
+					<div class="form-group">
+						<label for="sirname">Sir Name &#58; </label>
+						<input type="text" id="sirname" name="sirname" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="age">Age &#58;</label>
+					<input type="number" id="age" name="age" required>
+				</div>
+				<div class="form-group">
+					<label for="city">City &#58;</label>
+					<input type="text" id="city" name="city" required>
+				</div>
+				<div class="form-group">
+					<label for="phonenumber">Phone Number &#58;</label>
+					<input type="tel" id="phonenumbe" name="phonenumbe" required>
+				</div>
+				<div class="form-group">
+					<label for="email">Email &#58;</label>
+					<input type="email" id="email" name="email" required>
+				</div>
+				<div class="form-group">
+					<label for="password">Password &#58;</label>
+					<input type="password" id="password" name="password" required>
+					<a href="#">
+						<button class="button" type="button">Submit</button>
+					</a>
+					<a href="#">
+						<button class="backToHome" type="button" >
+							Back to Homepage
+						</button>
+					</a>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
