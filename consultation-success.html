@@ -96,17 +96,17 @@
     </div>
 
     <script>
-        // 1. Grab the URL data parameters sent from the form
+        
         const urlParams = new URLSearchParams(window.location.search);
         const meetingMethod = urlParams.get('channel'); // Gets "video", "voice", or "chat"
 
-        // 2. Select the HTML text items we want to change
+        
         const iconBox = document.getElementById('status-icon');
         const heading = document.getElementById('status-heading');
         const text = document.getElementById('status-text');
         const cancelBtn = document.getElementById('cancel-btn');
 
-        // 3. Check what option the user picked and rewrite the page elements dynamically
+        
         if (meetingMethod === 'chat') {
             iconBox.textContent = '💬';
             heading.textContent = 'Opening Secure Chat Room...';
