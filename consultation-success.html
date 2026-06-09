@@ -98,7 +98,7 @@
     <script>
         
         const urlParams = new URLSearchParams(window.location.search);
-        const meetingMethod = urlParams.get('channel'); // Gets "video", "voice", or "chat"
+        const meetingMethod = urlParams.get('channel'); 
 
         
         const iconBox = document.getElementById('status-icon');
@@ -118,7 +118,11 @@
             text.textContent = 'Dr. Vance is connecting to your audio stream. Please make sure your microphone permissions are enabled on your device.';
             cancelBtn.textContent = 'End Audio Call';
         }
-        
+
+        const doctorNameNext = urlParams.get('name');
+        if (doctorNameNext) {
+            document.getElementById('status-text').innerHTML = `<strong>${doctorNameNext.replace(/\+/g, ' ')}</strong> is reviewing your medical intake notes...`;
+        }
     </script>
 
 </body>
