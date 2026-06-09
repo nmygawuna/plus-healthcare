@@ -32,7 +32,7 @@
             text-align: center;
         }
 
-        /* --- PULSING LOADING RING --- */
+        /* Pulsing ring animation */
         .pulse-box {
             width: 90px;
             height: 90px;
@@ -44,7 +44,6 @@
             justify-content: center;
             font-size: 32px;
             margin: 0 auto 24px auto;
-            position: relative;
             animation: pulse 1.8s infinite ease-in-out;
         }
 
@@ -69,7 +68,7 @@
 
         .disconnect-btn {
             display: inline-block;
-            background-color: #D32F2F; /* Red to exit the call safely */
+            background-color: #D32F2F;
             color: #ffffff;
             text-decoration: none;
             padding: 14px 24px;
@@ -78,6 +77,7 @@
             width: 100%;
             border: none;
             cursor: pointer;
+            text-align: center;
         }
 
         .disconnect-btn:hover {
@@ -88,13 +88,38 @@
 <body>
 
     <div class="connecting-card">
-        <div class="pulse-box">📞</div>
+        <div class="pulse-box" id="status-icon">📞</div>
+        <h1 id="status-heading">Connecting to Secure Room...</h1>
+        <p id="status-text">Dr. Vance is reviewing your medical intake notes. Your encrypted connection will initialize automatically in just a moment.</p>
         
-        <h1>Connecting to Secure Room...</h1>
-        <p>Dr. Vance is reviewing your medical intake notes. Your encrypted video connection will initialize automatically in just a moment. Please ensure your camera and microphone are toggled on.</p>
-        
-        <a href="index.html" class="disconnect-btn">Cancel Call Request</a>
+        <a href="index.html" class="disconnect-btn" id="cancel-btn">Cancel Request</a>
     </div>
+
+    <script>
+        // 1. Grab the URL data parameters sent from the form
+        const urlParams = new URLSearchParams(window.location.search);
+        const meetingMethod = urlParams.get('channel'); // Gets "video", "voice", or "chat"
+
+        // 2. Select the HTML text items we want to change
+        const iconBox = document.getElementById('status-icon');
+        const heading = document.getElementById('status-heading');
+        const text = document.getElementById('status-text');
+        const cancelBtn = document.getElementById('cancel-btn');
+
+        // 3. Check what option the user picked and rewrite the page elements dynamically
+        if (meetingMethod === 'chat') {
+            iconBox.textContent = '💬';
+            heading.textContent = 'Opening Secure Chat Room...';
+            text.textContent = 'Dr. Vance is reviewing your intake details. Your encrypted live text chat portal will launch automatically in just a moment. Please type your primary concerns inside the chat feed.';
+            cancelBtn.textContent = 'Leave Chat Room';
+        } else if (meetingMethod === 'voice') {
+            iconBox.textContent = '🔊';
+            heading.textContent = 'Initializing Audio Call...';
+            text.textContent = 'Dr. Vance is connecting to your audio stream. Please make sure your microphone permissions are enabled on your device.';
+            cancelBtn.textContent = 'End Audio Call';
+        }
+        // If it is 'video', it defaults to the original setup code we wrote earlier!
+    </script>
 
 </body>
 </html>
