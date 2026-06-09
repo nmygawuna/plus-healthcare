@@ -1,101 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Login</title>
+		<title>Sign Up - PLUS Healthcare</title>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width = device - width, initial - scale = 1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<style>
-			body{
-				background-color:  #f4faff;;
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				background-color: #f4faff;
 				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 				color: #2d3748;
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				min-height: 100vh;
-				margin: 0;
-				padding: 20px;
+				padding: 40px 20px;
 			}
-			.form-containers{
+
+			.form-containers {
 				width: 100%;
-				max-width: 500px;
-				padding: 30px;
-				border-radius: 10px;
-				min-height: 90vh;
+				max-width: 520px;
+				padding: 40px;
+				border-radius: 16px;
+				background-color: #ffffff; /* Gives the form a clean white card background */
+				box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 			}
+
+			.logoh1 {
+				display: flex; 
+				align-items: center;
+				gap: 12px;
+				margin-bottom: 8px;
+			}
+
+			.logo {
+				width: auto;
+				height: 36px;
+			}
+			
+			.title {
+				color: #00695c;
+				font-size: 28px;
+				font-weight: 700;
+			}
+
+			.wellcome {
+				margin-bottom: 30px;
+				color: #718096;
+				font-size: 15px;
+			}
+
 			.form-group {
+				margin-bottom: 20px;
+			}
+
+			label {
 				display: block;
 				font-weight: 600;
 				margin-bottom: 8px;
 				font-size: 14px;
 				color: #2d3748;
 			}
-			label{
-				display: block;
-				margin-bottom: 8px;
-				border-radius: 5px;
-			}
-			input{
+
+			input {
 				width: 100%;
 				padding: 12px;
-				box-sizing: border-box;
-				border-radius: 5px;
-				border-color: antiquewhite;
+				border-radius: 8px;
+				border: 2px solid #e2e8f0;
+				font-size: 15px;
+				color: #2d3748;
+				background-color: #fafafa;
+				transition: all 0.3s ease;
+				outline: none;
 			}
-			.name-row{
-				display: flex;
-				gap: 10px;
+
+			/* Interactive glow when user clicks into a field */
+			input:focus {
+				border-color: #00695c;
+				background-color: #ffffff;
+				box-shadow: 0 0 0 3px rgba(0, 105, 92, 0.1);
 			}
-			.name-row, .form-containers{
-				flex: 1;
+
+			/* The side-by-side row fix */
+			.name-row {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr; /* Splitting names into 3 equal columns */
+				gap: 12px;
+				margin-bottom: 20px;
 			}
-			.button{
-				width: calc(100%);
-				margin: 20px 0px;
+
+			/* Resets margin for groups inside a row container */
+			.name-row .form-group {
+				margin-bottom: 0;
+			}
+
+			.button {
+				width: 100%;
+				margin: 10px 0;
 				cursor: pointer;
 				font-size: 16px;
-				box-sizing: border-box;
+				font-weight: 600;
 				background-color: #00695c;
 				color: white;
-				border-radius: 5px;
-				padding: 10px 5px 5px 5px;
+				border-radius: 8px;
+				padding: 14px; /* Perfectly centered, readable padding */
+				border: none;
+				transition: background-color 0.2s ease;
 			}
-			.wellcome{
-				margin-top: 0%;
-				margin-bottom: 25px;
-			}
-			.title{
-				margin-top: 0%;
-				margin-bottom: 2px;
-				color: #00695c;
-				font-size: 28px;
-				margin-bottom: 10px;
-			}
-			.logoh1{
-				display: flex; 
-				margin: 0%;
-			}
-			.logo{
-				width: auto;
-				height: 45px;
-				display: flex;
-				align-items: flex-end;
-				margin-bottom: 2px;
-			}
-			
-      .back-link {
-        display: block;
-        text-align: center;
-        margin-top: 25px;
-        color: #007a87;
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: 500;
-      }
 
-      .back-link:hover {
-        text-decoration: underline;
-      }
+			.button:hover {
+				background-color: #004d40;
+			}
+
+			.back-link {
+				display: block;
+				text-align: center;
+				margin-top: 20px;
+				color: #007a87;
+				text-decoration: none;
+				font-size: 14px;
+				font-weight: 500;
+			}
+
+			.back-link:hover {
+				text-decoration: underline;
+			}
 		</style>
 	</head>
 	<body>
@@ -105,45 +139,46 @@
 				<h1 class="title">Sign In</h1>
 			</div>
 			<p class="wellcome">Welcome! Let's create your account.</p>
-			<form>
-				<div class="name-row" >
+			
+			<form action="success.html" method="GET">
+				<div class="name-row">
 					<div class="form-group">
-						<label for="firstname">First Name &#58;</label>
+						<label for="firstname">First Name</label>
 						<input type="text" id="firstname" name="firstname" required>
 					</div>
 					<div class="form-group">
-						<label for="middlename">Middle Name &#58; </label>
-						<input type="text" id="middlename" name="middlename" required>
+						<label for="middlename">Middle Name</label>
+						<input type="text" id="middlename" name="middlename">
 					</div>
 					<div class="form-group">
-						<label for="surname">Surname &#58; </label>
+						<label for="surname">Surname</label>
 						<input type="text" id="sirname" name="sirname" required>
 					</div>
 				</div>
+				
 				<div class="form-group">
-					<label for="age">Age &#58;</label>
+					<label for="age">Age</label>
 					<input type="number" id="age" name="age" required>
 				</div>
 				<div class="form-group">
-					<label for="city">City &#58;</label>
+					<label for="city">City</label>
 					<input type="text" id="city" name="city" required>
 				</div>
 				<div class="form-group">
-					<label for="phonenumber">Phone Number &#58;</label>
-					<input type="tel" id="phonenumbe" name="phonenumbe" required>
+					<label for="phonenumber">Phone Number</label>
+					<input type="tel" id="phonenumber" name="phonenumber" required>
 				</div>
 				<div class="form-group">
-					<label for="email">Email &#58;</label>
+					<label for="email">Email</label>
 					<input type="email" id="email" name="email" required>
 				</div>
 				<div class="form-group">
-					<label for="password">Password &#58;</label>
+					<label for="password">Password</label>
 					<input type="password" id="password" name="password" required>
-					<a href="#">
-						<button class="button" type="button">Submit</button>
-					</a>
-					 <a href="index.html" class="back-link">Back to Homepage</a>
 				</div>
+
+				<button class="button" type="submit">Submit Application</button>
+				<a href="index.html" class="back-link">Back to Homepage</a>
 			</form>
 		</div>
 	</body>
