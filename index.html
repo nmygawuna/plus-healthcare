@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,7 @@
             --bg-card: #ffffff;
         }
 
-        *{
+        * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -29,89 +29,90 @@
             color: var(--text-main);
             line-height: 1.6;
         }
+
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
+
         header {
             background: var(--bg-card);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
-        nav{
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 15px 0;
         }
 
-        
-
-
-        .nav-links{
+        .nav-links {
             display: flex;
             list-style: none;
             align-items: center;
-            gap: 30px;
+            gap: 25px;
         }
 
-        .nav-links a{
+        .nav-links a {
             text-decoration: none;
             color: var(--text-main);
             font-weight: 500;
-            transition: color 0.3s;
+            transition: color 0.3s ease;
         }
 
-        .nav-links a:hover{
+        .nav-links a:hover {
             color: var(--primary);
         }
 
-        
-        .logo{
-            display:flex;
-            align-items:center;
-            gap:10px;
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
-        .logo img{
-            width:50px;
-            height:50px;
-        }
-        .logo-text h2{
-            color: var(--primary);
-            margin:0;
-            font-size:28px;
-        }
-        
-        .logo-text p{
-             color: var(--text-main);
-             margin:0;
-             font-size:14px;
-             letter-spacing:2px;
+        .logo img {
+            width: 45px;
+            height: 45px;
         }
 
-        .center-logo-img{
-            width:40px;
-            height:40px;
+        .logo-text h2 {
+            color: var(--primary);
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1;
         }
-        .dropdown-container{
+        
+        .logo-text p {
+             color: var(--text-muted);
+             margin: 0;
+             font-size: 11px;
+             letter-spacing: 1.5px;
+             text-transform: uppercase;
+        }
+
+        /* --- DROPDOWN NAVIGATION --- */
+        .dropdown-container {
             position: relative;
         }
-        .dropdown-menu{
+
+        .dropdown-menu {
             display: none;
             position: absolute;
             top: 100%;
             left: 0;
             background-color: var(--bg-card);
-            min-width: 200px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            min-width: 180px;
+            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
             border-radius: 6px;
             list-style: none;
-            padding: 10px 0;
+            padding: 8px 0;
             z-index: 1000;
         }
 
@@ -119,150 +120,151 @@
             color: var(--text-main);
             padding: 10px 20px;
             display: block;
-            text-decoration: none;
             font-size: 14px;
-            transition: background 0.2s;
         }
 
-        .dropdown-container li a:hover{
-            background-color: var(--bg-light);
-            color: var(--primary);
-        }
-
-        .dropdown-container:hover .dropdown-menu{
+        .dropdown-container:hover .dropdown-menu {
             display: block;
         }
 
-        .arrow-icon{
-            font-size: 12px;
+        .arrow-icon {
+            font-size: 11px;
             margin-left: 5px;
             color: var(--text-muted);
-            transition: transform 0.3s;
-        }
-        .dropdown-container:hover .arrow-icon{
-            transform: rotate(180deg);
-            color: var(--primary);
         }
 
         .contact-btn {
             background-color: var(--primary);
             color: white !important;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background 0.3s !important;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-weight: 600;
         }
-        .contact-btn:hover{
+
+        .contact-btn:hover {
             background-color: var(--primary-dark);
         }
 
-        .hero{
+        /* --- HERO BANNER --- */
+        .hero {
             background: linear-gradient(rgba(0, 122, 135, 0.1), rgba(0, 122, 135, 0.2)),
                         url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1200&h=450') 
                         no-repeat center center/cover;
-                        height: 400px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        margin-bottom: 40px;
-                        border-radius: 0 0 20px 20px;
+            height: 350px;
+            margin-bottom: 40px;
+            border-radius: 0 0 20px 20px;
+            width: 100%;
         }
 
-        .section-title{
+        .section-title {
             text-align: center;
             font-size: 28px;
             margin-bottom: 40px;
             color: var(--primary-dark);
-            font-weight: 600;
+            font-weight: 700;
+            padding: 0 10px;
         }
 
-        .service-card{
-            background:#F0F8FF;
-            flex: 1;
-            padding: 40px;
+        /* --- SERVICES CONTAINER COMPONENT --- */
+        .lower-grid-services {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+            position: relative;
+            width: 100%;
+        }
+
+        .service-card {
+            background: #F0F8FF;
+            padding: 40px 30px;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
             text-align: center;
             border-top: 5px solid var(--primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
         }
-        .service-card-emergency{
-         background:#FFEBEE;
-            flex: 1;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            border-top: 5px solid var(--primary);
-        }
-        .service-emergency{
-            border-top: 5px solid var(--secondary);
-        }
-            
 
-        .emergency{
+        .service-card-emergency {
+            background: #FFEBEE;
             border-top: 5px solid var(--secondary);
         }
 
-        .card-icon{
+        .card-icon {
             font-size: 40px;
             color: var(--primary);
             margin-bottom: 15px;
         }
 
-        .emergency .card-icon{
+        .service-card-emergency .card-icon {
             color: var(--secondary);
         }
 
-        .service-card h3{
-            margin-bottom: 20px;
+        .service-card h3 {
+            margin-bottom: 15px;
             font-size: 22px;
+            color: var(--text-main);
         }
 
-        .bullet-list{
+        .bullet-list {
             list-style: none;
             text-align: center;
+            width: 100%;
             max-width: 250px;
-            margin: 0 auto 30px auto;
+            margin: 0 auto 25px auto;
         }
-        .btn{
-            background: var(--primary);
-            color: white;
+
+        .bullet-list li {
+            padding: 6px 0;
+            border-bottom: 1px dashed rgba(0,0,0,0.05);
+            font-size: 15px;
+        }
+
+        /* --- INTERACTIVE ACTION BUTTONS --- */
+        .btn {
+            display: inline-block;
+            width: 100%;
+            max-width: 200px;
+            padding: 12px 20px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s;
-            padding: 8px;
+            font-size: 15px;
+            transition: all 0.2s ease;
+            text-align: center;
         }
         
-        .btn-primary{
+        .btn-primary {
             background: var(--primary);
             color: white;
         }
 
-        .btn-primary:hover{
-            background: var(--secondary-dark);
+        .btn-primary:hover {
+            background: var(--primary-dark);
         }
 
-        .btn-secondary{
+        .btn-secondary {
             background: var(--secondary);
             color: white;
         }
 
-        .btn-secondary:hover{
+        .btn-secondary:hover {
             background: var(--secondary-dark);
         }
 
-        .center-logo{
+        /* Desktop Central Floating Badge */
+        .center-logo {
             background: var(--bg-card);
-            color: var(--primary-dark);
-            width: 60px;
-            height: 60px;
+            width: 64px;
+            height: 64px;
             border-radius: 50%;
-            display: grid;
-            grid-row: 1;
+            display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
             z-index: 10;
             position: absolute;
             left: 50%;
@@ -270,231 +272,43 @@
             transform: translate(-50%, -50%);
         }
 
-        .lower-grid-services{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr;
-            gap: 30px;
-            margin-bottom: 60px;
-            margin-top: 60px;
-            position: relative;
-            width: 100%;
-        }
-        .lower-grid{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 60px;
-            margin-top: 60px;
+        .center-logo-img {
+            width: 40px;
+            height: 40px;
         }
 
-        .grid-card{
+        /* --- LOWER SUB-GRID MODULE --- */
+        .lower-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .grid-card {
             background: #F0F8FF;
             padding: 40px;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
             border-top: 5px solid var(--primary);
         }
 
-        .grid-card-donations{
+        .grid-card-donations {
             background: #E8F5E9;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            border-top: 5px solid  #00695C;
+            border-top: 5px solid #00695C;
         }
 
-        .btn-donations{
-            margin-top: 30px;
-            background: #00695C;
-            color: white;
-        }
-
-        .btn-donations:hover{
-            background: #004D40;
-        }
-
-        .grd-card h3{
+        .grid-card h3 {
             font-size: 22px;
-            margin-bottom: 10px;
+            margin: 10px 0;
         }
 
-        .grid-card p{
+        .grid-card p {
             color: var(--text-muted);
-            margin-bottom: 25px;
-        }
-
-        .btn-outline{
-            order: px solid var(--primary);
-            color: var(--bg-light);
-        }
-
-        .btn-outline:hover{
-            background: var(--secondary-dark);
-        }
-
-        .trust-bar{
-            background: var(--primary);
-            color: var(--bg-light);
-            border-top: 1px solid #E2E8F0;
-            padding: 30px 0;
-            margin-top: 40px;
-        }
-
-        .stats-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .stat-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .stat-item i {
-            font-size: 28px;
-            color: var(--primary);
-        }
-
-        .stat-text h4 {
-            font-size: 18px;
-            color: var(--bg-light);
+            margin-bottom: 20px;
+            font-size: 15px;
         }
 
         .personnel-img {
-            width: 120px;               
-            height: 120px;             
-            object-fit: cover;          
-            border-radius: 50%;         
-            margin-bottom: 15px;        
-            border: 3px solid #00695C;  
-        }
-        @media (max-width: 768px) {
-            .services-split, .lower-grid, .stats-container {
-                flex-direction: column;
-                grid-template-columns: 1fr;
-            }
-            .center-logo {
-                display: none; 
-            }
-            .nav-links {
-                display: none; 
-            }
-        }
-    </style>
-</head>   
-<body>
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">
-                    <img src="logo.png" alt="PLUS Health Logo">
-                    <div class="logo-text">
-                        <h2>PLUS</h2>
-                        <p>Healthcare</p>
-                    </div>
-                </div>
-                
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about-us.html">About Us</a></li>
-                    <li  class="dropdown-container">
-                        <a href="#"  class="dropdown-trigger">Services<i class="fa-solid fa-chevron-down arrow-icon"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="contact.html">Consultations</a></li>
-                            <li><a href="emergency.html">Emergency</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Subscription</a></li>
-                    <li><a href="contact-us.html" class="contact-btn">Contact Us</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <section class="container">
-        <div class="hero">
-    </section>
-    <section class="container">
-        <h2 class="section-title">Two Main Services, One Goal: Your Health</h2>
-        <div class="lower-grid-services">
-            <div class="service-card">
-                <i class="fa-solid fa-laptop-medical card-icon"></i>
-                <h3>Online Healthcare</h3>
-                <ul class="bullet-list">
-                    <li>Virtual Consultations</li>
-                    <li>Digital Prescriptions</li>
-                    <li>24/7 Medical Chat</li>
-                </ul>
-                <a href="login.html" class="btn btn-primary">Get started <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-        
-
-            <div class="center-logo"><img class="center-logo-img"  src="logo.png"></div>
-
-            <div class="service-card-emergency emergency">
-                <i class="fa-solid fa-bell-on card-icon"></i>
-                <h3>Emergency Response</h3>
-                <ul class="bullet-list">
-                    <li>Instant Dispatch</li>
-                    <li>Real-time Tracking</li>
-                    <li>Paramedic Support</li>
-                </ul>
-                <a href="emergency.html" class="btn btn-secondary">Request Help Now<i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
-    <section class="container">
-        <div class="lower-grid">
-            <div class="grid-card">
-                <img src="https://thumbs.dreamstime.com/b/laughing-african-doctor-medical-record-his-hand-handsome-south-africa-patient-white-background-34297502.jpg?w=768" alt="Doctor Profile" class="personnel-img">
-                <p style="text-transform: uppercase; font-size: 12px; font-weight: bold; color:var(--primary);">For Healthcare Professionals</p>
-                <h3>Join PLUS</h3>
-                <p>Collaborate with a modern medical network to deliver world-class virtual care, manage your clinical schedules seamlessly, and reach more patients in need globally.</p>
-                <a href="join-professional.html" class="btn btn-outline">Join as Professional<i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-            <div class="grid-card-donations">
-                <p style="text-transform: uppercase; font-size: 12px; font-weight: bold; color: var(--primary);">Make an Impact</p>
-                <h3>Donations</h3>
-                <p>Support our global mission to provide accessible critical care resources, emergency vehicles, and premium telehealth medical equipment to communities in underserved regions.</p>
-                <a href="donate.html" class="btn btn-donations">Donate now<i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
-    <footer class="trust-bar">
-        <div class="container stats-container">
-            <div class="stat-item">
-                <i class="fa-solid fa-users"></i>
-                <div class="stat-text">
-                    <h4>People Helped</h4>
-                    <p>Over 10,000+ lives impacted</p>
-                </div>
-            </div>
-            <div class="stat-item">
-                <i class="fa-solid fa-user-md"></i>
-                <div class="stat-text">
-                    <h4>Healthcare Professionals</h4>
-                    <p>Verified elite doctors & nurses</p>
-                </div>
-            </div>
-            <div class="stat-item">
-                <i class="fa-solid fa-ambulance"></i>
-                <div class="stat-text">
-                    <h4>Emergency Responses</h4>
-                    <p>Immediate field dispatch action</p>
-                </div>
-            </div>
-            <div class="stat-item">
-                <i class="fa-solid fa-shield-halved"></i>
-                <div class="stat-text">
-                    <h4>Support</h4>
-                    <p>Always available 24/7</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+            width: 90px;               
+            height: 90px;
