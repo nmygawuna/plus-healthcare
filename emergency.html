@@ -65,7 +65,7 @@
             font-size: 14px;
         }
 
-        input {
+        input, select {
             width: 100%;
             padding: 14px;
             border-radius: 8px;
@@ -73,15 +73,15 @@
             background-color: #FAFAFA;
             font-size: 15px;
             outline: none;
+            transition: all 0.3s ease;
         }
 
-        input:focus {
+        input:focus, select:focus {
             border-color: #D32F2F;
             box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
             background-color: #fff;
         }
 
-        /* --- THE TRANSPARENT PRICING NOTICE --- */
         .pricing-notice {
             background-color: #FFF5F5;
             border: 1px dashed #FEB2B2;
@@ -110,7 +110,6 @@
             color: #D32F2F;
         }
 
-        /* --- DISPATCH BUTTON --- */
         .dispatch-btn {
             width: 100%;
             background-color: #D32F2F;
@@ -144,10 +143,23 @@
         <div class="header">
             <div class="icon">🚨</div>
             <h1>Emergency Dispatch</h1>
-            <p>Confirm your location to route the nearest medical team.</p>
+            <p>Help us identify the situation so our medical team can prepare.</p>
         </div>
 
         <form action="emergency-billing.html" method="GET">
+            <div class="form-group">
+                <label for="emergency-type">Type of Medical Emergency</label>
+                <select id="emergency-type" name="emergency-type" required>
+                    <option value="" disabled selected>Select emergency type...</option>
+                    <option value="accident">Road Accident</option>
+                    <option value="cardiac">Severe Chest Pain / Cardiac</option>
+                    <option value="respiratory">Breathing Difficulty / Asthma</option>
+                    <option value="trauma">Severe Injury / Physical Trauma</option>
+                    <option value="allergic">Severe Allergic Reaction (Anaphylaxis)</option>
+                    <option value="other">Other Urgent Medical Crisis</option>
+                </select>
+            </div>
+
             <div class="form-group">
                 <label for="location">Current Location / Address</label>
                 <input type="text" id="location" name="location" placeholder="Enter street address or apartment number" required>
