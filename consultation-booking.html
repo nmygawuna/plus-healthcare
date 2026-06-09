@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect with Doctor - PLUS Healthcare</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #F4FAFF; /* Your signature light azure background */
+            color: #2D3748;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .booking-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 500px;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 105, 92, 0.05);
+        }
+
+        /* --- DOCTOR MINI PROFILE --- */
+        .doctor-profile {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background-color: #FAFBFD;
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid #E2E8F0;
+            margin-bottom: 25px;
+        }
+
+        .doc-avatar {
+            font-size: 32px;
+            background-color: rgba(0, 105, 92, 0.1);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .doc-info h2 {
+            font-size: 18px;
+            color: #00695C; /* Your medium-dark green */
+            font-weight: 700;
+        }
+
+        .doc-info p {
+            font-size: 13px;
+            color: #718096;
+        }
+
+        /* --- FORM ELEMENTS --- */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        select, textarea {
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            border: 2px solid #E2E8F0;
+            background-color: #FAFAFA;
+            font-size: 15px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        select:focus, textarea:focus {
+            border-color: #00695C;
+            box-shadow: 0 0 0 3px rgba(0, 105, 92, 0.1);
+            background-color: #fff;
+        }
+
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        /* --- SUBSCRIPTION COVERAGE NOTICE --- */
+        .coverage-notice {
+            background-color: #E0F2F1; /* Soft green tint */
+            border: 1px solid #B2DFDB;
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .coverage-icon {
+            font-size: 20px;
+        }
+
+        .coverage-text {
+            font-size: 13px;
+            color: #004D40;
+            font-weight: 500;
+        }
+
+        /* --- CONNECT BUTTON --- */
+        .connect-btn {
+            width: 100%;
+            background-color: #00695C;
+            color: white;
+            border: none;
+            padding: 16px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .connect-btn:hover {
+            background-color: #004D40;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #718096;
+            text-decoration: none;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="booking-card">
+        <div class="doctor-profile">
+            <div class="doc-avatar">👨‍⚕️</div>
+            <div class="doc-info">
+                <h2>Dr. Alexander Vance</h2>
+                <p>General Practitioner • Online Now</p>
+            </div>
+        </div>
+
+        <form action="consultation-success.html" method="GET">
+            
+            <div class="form-group">
+                <label for="visit-reason">Reason for Consultation</label>
+                <select id="visit-reason" name="visit-reason" required>
+                    <option value="" disabled selected>Select primary symptom...</option>
+                    <option value="fever">Fever / Cold Symptoms</option>
+                    <option value="prescription">Prescription Renewal</option>
+                    <option value="pain">Chronic Pain Follow-up</option>
+                    <option value="mental-health">Mental Health & Wellness</option>
+                    <option value="other">Other Medical Concern</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="channel">Preferred Meeting Method</label>
+                <select id="channel" name="channel" required>
+                    <option value="video">Secure Video Call (Recommended)</option>
+                    <option value="voice">Audio-Only Voice Call</option>
+                    <option value="chat">Real-time Text Chat</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Brief Medical Notes (Optional)</label>
+                <textarea id="notes" name="notes" placeholder="Describe how you are feeling or any questions you have for the doctor..."></textarea>
+            </div>
+
+            <div class="coverage-notice">
+                <div class="coverage-icon">🛡️</div>
+                <div class="coverage-text">
+                    <strong>100% Covered!</strong> This consultation is included in your premium membership tier. No extra charges apply.
+                </div>
+            </div>
+
+            <button type="submit" class="connect-btn">Start Live Consultation</button>
+            <a href="index.html" class="back-link">Cancel and Go Back</a>
+        </form>
+    </div>
+
+</body>
+</html>
