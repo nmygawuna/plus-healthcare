@@ -155,7 +155,7 @@
         <div class="doctor-profile">
             <div class="doc-avatar">👨‍⚕️</div>
             <div class="doc-info">
-                <h2>Dr. Alexander Vance</h2>
+                <h2 id="dynamic-doctor-name">Doctor Name</h2>
                 <p>General Practitioner • Online Now</p>
             </div>
         </div>
@@ -200,5 +200,20 @@
         </form>
     </div>
 
+    <script>
+    // 1. Look at the web address bar to find the doctor's name
+    const bookingParams = new URLSearchParams(window.location.search);
+    const doctorName = bookingParams.get('name'); // Extracts the name parameter
+
+    // 2. If a name was passed in the link, swap out the placeholder text
+    if (doctorName) {
+        // Replaces the "+" symbols back into normal spaces for clean reading
+        document.getElementById('dynamic-doctor-name').textContent = doctorName.replace(/\+/g, ' ');
+    } else {
+        // Fallback default just in case they clicked a broken link
+        document.getElementById('dynamic-doctor-name').textContent = "Available Practitioner";
+    }
+</script>
+    
 </body>
 </html>
