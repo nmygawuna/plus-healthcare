@@ -96,7 +96,7 @@
          text-transform: uppercase;
       }
 
-      /* --- DROPDOWN NAVIGATION --- */
+      
       .dropdown-container {
         position: relative;
       }
@@ -156,7 +156,7 @@
         background-color: var(--primary-dark);
       }
 
-      /* --- RESPONSIVE DONATION CARD --- */
+     
       main {
         padding: 40px 0;
       }
@@ -209,7 +209,7 @@
         background: var(--primary-dark);
         color: white;
         border: none;
-        width: 100%; /* Spans full width on phone components for easier tapping */
+        width: 100%;
         padding: 14px 28px;
         border-radius: 10px;
         font-weight: 600;
@@ -273,7 +273,6 @@
         margin-top: 2px;
       }
 
-      /* --- NAVIGATION WORKFLOW MEDIA BREAKPOINT --- */
       @media (max-width: 768px) {
         nav {
           flex-direction: column;
@@ -340,8 +339,10 @@
             Your donation helps us provide better healthcare to those in need. Every contribution counts.
           </p>
           
-          <input type="number" class="amount-input" placeholder="Enter amount (e.g., 500)" min="1">
-          <button class="donate-btn" type="button">Donate Now</button>
+          <form action="thank-you.html" method="GET">
+            <input type="number" name="amount" class="amount-input" placeholder="Enter amount (e.g., 500)" min="1" required>
+            <button class="donate-btn" type="submit">Donate Now</button>
+          </form>
           
           <div class="payment-methods">
             <h3><i class="fa-solid fa-university"></i> How to Send Your Donation</h3>
