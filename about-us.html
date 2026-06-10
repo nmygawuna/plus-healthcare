@@ -15,7 +15,7 @@
             --bg-card: #ffffff;
         }
 
-        /* --- GLOBAL RESET & FLUID FLUIDITY --- */
+        
         * {
             box-sizing: border-box;
             margin: 0;
@@ -30,7 +30,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Essential shared responsive wrapper */
+       
         .container {
             width: 100%;
             max-width: 1100px;
@@ -38,7 +38,7 @@
             padding: 0 20px;
         }
 
-        /* --- HEADER & NAVIGATION SYSTEM --- */
+        
         header {
             background: var(--bg-card);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -98,7 +98,7 @@
              text-transform: uppercase;
         }
 
-        /* Dropdown Mechanics */
+        
         .dropdown-container {
             position: relative;
         }
@@ -152,19 +152,19 @@
             background-color: var(--primary-dark);
         }
         
-        /* --- DYNAMIC & RESPONSIVE CONTENT CARD --- */
+
         .aboutUs {
             width: 100%;
-            max-width: 680px; /* Replaces fixed width so it scales down on mobile */
+            max-width: 680px; 
             background-color: var(--bg-card);
             padding: 40px;
             border-radius: 16px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
-            margin: 50px auto; /* Perfectly centers it horizontally on all screen sizes */
+            margin: 50px auto; 
         }
 
         h1 {
-            font-size: 38px; /* Safe, clear default desktop font size */
+            font-size: 38px; 
             font-weight: 700;
             margin-bottom: 20px;
             color: var(--primary);
@@ -176,10 +176,10 @@
             line-height: 1.7;
         }
 
-        /* --- THE MASTER MOBILE OVERHAUL DECREE (Portrait Views) --- */
+        
         @media (max-width: 768px) {
             nav {
-                flex-direction: column; /* Stack logo over menu options safely */
+                flex-direction: column; 
                 gap: 15px;
                 text-align: center;
             }
@@ -187,7 +187,7 @@
             .nav-links {
                 width: 100%;
                 justify-content: center;
-                flex-wrap: wrap; /* Wraps items cleanly instead of driving off screen */
+                flex-wrap: wrap; 
                 gap: 15px;
             }
 
@@ -195,7 +195,7 @@
                 font-size: 14px;
             }
 
-            /* Transforms the content card fluidly on upright phone configurations */
+           
             .aboutUs {
                 margin: 24px auto;
                 padding: 24px;
@@ -203,7 +203,7 @@
             }
 
             h1 {
-                font-size: 28px; /* Shrinks the text size smoothly so it doesn't cause overflow bugs */
+                font-size: 28px; 
                 margin-bottom: 12px;
             }
 
