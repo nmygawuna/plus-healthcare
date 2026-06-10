@@ -1,22 +1,23 @@
-<!DOCTYPE html>>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-	  <meta charset="UTF-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	  <title>Contact a Doctor - PLUS Healthcare</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact a Doctor - PLUS Healthcare</title>
+    <script src="https://kit.fontawesome.com/999aaab8bd.js" crossorigin="anonymous"></script>
     <style>
-       :root {
+        :root {
             --primary: #007a87;
             --primary-dark: #005a64;
             --secondary: #ff6f61;
             --secondary-dark: #e05346;
             --text-main: #2d3748;
             --text-muted: #718096;
-            --bg-light: #f7fafc;
+            --bg-light: #f4faff; 
             --bg-card: #ffffff;
         }
 
-        *{
+        * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -24,93 +25,93 @@
         }
 
         body {
-            background-color: f4faff;
+            background-color: var(--bg-light);
             color: var(--text-main);
             line-height: 1.6;
         }
-		.container {
+
+        .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-	        padding: 0 20px;
-		}
-       header {
+            padding: 0 20px;
+        }
+
+        header {
             background: var(--bg-card);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
-        nav{
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 15px 0;
         }
 
-        
-
-
-        .nav-links{
+        .nav-links {
             display: flex;
             list-style: none;
             align-items: center;
-            gap: 30px;
+            gap: 25px;
         }
 
-        .nav-links a{
+        .nav-links a {
             text-decoration: none;
             color: var(--text-main);
             font-weight: 500;
             transition: color 0.3s;
         }
 
-        .nav-links a:hover{
+        .nav-links a:hover {
             color: var(--primary);
         }
 
-        
-        .logo{
-            display:flex;
-            align-items:center;
-            gap:10px;
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
-        .logo img{
-            width:50px;
-            height:50px;
-        }
-        .logo-text h2{
-            color: var(--primary);
-            margin:0;
-            font-size:28px;
-        }
-        
-        .logo-text p{
-             color: var(--text-main);
-             margin:0;
-             font-size:14px;
-             letter-spacing:2px;
+        .logo img {
+            width: 45px;
+            height: 45px;
         }
 
-        .center-logo-img{
-            width:40px;
-            height:40px;
+        .logo-text h2 {
+            color: var(--primary);
+            margin: 0;
+            font-size: 24px;
+            line-height: 1;
         }
-        .dropdown-container{
+        
+        .logo-text p {
+             color: var(--text-muted);
+             margin: 0;
+             font-size: 11px;
+             letter-spacing: 1.5px;
+             text-transform: uppercase;
+        }
+
+        
+        .dropdown-container {
             position: relative;
         }
-        .dropdown-menu{
+
+        .dropdown-menu {
             display: none;
             position: absolute;
             top: 100%;
             left: 0;
             background-color: var(--bg-card);
-            min-width: 200px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            min-width: 180px;
+            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
             border-radius: 6px;
             list-style: none;
-            padding: 10px 0;
+            padding: 8px 0;
             z-index: 1000;
         }
 
@@ -118,27 +119,27 @@
             color: var(--text-main);
             padding: 10px 20px;
             display: block;
-            text-decoration: none;
             font-size: 14px;
-            transition: background 0.2s;
+            text-decoration: none;
         }
 
-        .dropdown-container li a:hover{
+        .dropdown-menu li a:hover {
             background-color: var(--bg-light);
             color: var(--primary);
         }
 
-        .dropdown-container:hover .dropdown-menu{
+        .dropdown-container:hover .dropdown-menu {
             display: block;
         }
 
-        .arrow-icon{
-            font-size: 12px;
+        .arrow-icon {
+            font-size: 11px;
             margin-left: 5px;
             color: var(--text-muted);
             transition: transform 0.3s;
         }
-        .dropdown-container:hover .arrow-icon{
+
+        .dropdown-container:hover .arrow-icon {
             transform: rotate(180deg);
             color: var(--primary);
         }
@@ -146,107 +147,202 @@
         .contact-btn {
             background-color: var(--primary);
             color: white !important;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background 0.3s !important;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-weight: 600;
         }
-        .contact-btn:hover{
+
+        .contact-btn:hover {
             background-color: var(--primary-dark);
         }
-        .docContainers{
-          width: 100%;
-          max-width: 550px;
-          margin: 20px 400px auto;
-          background: #f8f8f8;
-          border-radius: 14px;
-          overflow: hidden;
-          float: left;
+
+       
+        main {
+            padding: 40px 0;
         }
-        .filterPar label{
-          font-weight: 600;
-          font-size: large;
-          color: #718096;
-          white-space: nowrap;
+
+        .docContainers {
+            width: 100%;
+            max-width: 650px;
+            margin: 0 auto;  
+            background: var(--bg-card);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
         }
+
         .filterPar {
-          padding: 14px 18px;
-          background: #F0F8FF;
-          border-bottom: 1px solid #e8e8e8;
-          display: flex;
-          align-items: center;
-          gap: 10px;
+            padding: 18px 24px;
+            background: #F0F8FF;
+            border-bottom: 1px solid #eaf2f8;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
-        .categoryDrop{
-          flex: 1;
-          padding: 8px 2px 5px 8px;
-          font-size: 0.9rem;
-          font-weight: 500;
-          color: #2d3748;
-          cursor: pointer;
-          outline: none;
-          appearance: none;
-          background-repeat: none;
-          background-position: right 14px center;
+
+        .filterPar label {
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--text-main);
+            white-space: nowrap;
         }
-        .doctorList{
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          background-color: #F0F8FF;
+
+        .categoryDrop {
+            flex: 1;
+            padding: 10px 12px;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-main);
+            background-color: white;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            cursor: pointer;
+            outline: none;
         }
-        .docItems{
-          display: flex;
-          align-items: center;
-          padding: 14px 18px;
-          cursor: pointer;
-          transition: background 0.15s;
-          border-bottom: 1px solid #f7fafc;
-          gap: 12px;
+
+        .doctorList {
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
-        .profilePics{
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 1.7;
-          margin-right: 14px;
-          flex-shrink: 0;
+
+        .docItems {
+            display: flex;
+            align-items: center;
+            padding: 20px 24px;
+            border-bottom: 1px solid #edf2f7;
+            gap: 16px;
+            transition: background 0.2s ease;
         }
-        .profilePics img{
-          width: 100;
-          height: 100%;
-          border-radius: 50%;
-          object-fit: cover;
+
+        .docItems:last-child {
+            border-bottom: none;
         }
-        .doctorInfo{
-          flex: 1;
-          min-width: o;
+
+        .docItems:hover {
+            background-color: #fafdfm;
         }
-        .doctorCategory{
-          font-size: 14px;
-          color: #00695c;
+
+        .profilePics {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            border: 2px solid #e2e8f0;
         }
-        .doctorName{
-          font-size: 20px;
+
+        .profilePics img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
         }
-        .contacBtn{
-          background: #00695c;
-          color: aliceblue;
-          border: none;
-          padding: 8px 16px;
-          border-radius: 12px;
-          cursor: pointer;
-          white-space: nowrap;
-          transition: background 0.2s;
-          display: flex;
-          gap: 6px;
-          flex-grow: 0;
+
+        .doctorInfo {
+            flex: 1;
+            min-width: 0; 
+        }
+
+        .doctorName {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 2px;
+        }
+
+        .doctorCategory {
+            font-size: 14px;
+            color: #00695c;
+            font-weight: 500;
+        }
+
+        
+        .docItems a {
+            text-decoration: none;
+        }
+
+        .contacBtn {
+            background: #00695c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+
+        .contacBtn:hover {
+            background: #004d40;
+        }
+
+       
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 14px;
+            }
+
+            main {
+                padding: 20px 0;
+            }
+
+            .docContainers {
+                border-radius: 10px;
+            }
+
+            .filterPar {
+                padding: 14px 16px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .categoryDrop {
+                width: 100%;
+            }
+
+            .docItems {
+                padding: 16px;
+                gap: 12px;
+            }
+
+            .profilePics {
+                width: 50px;
+                height: 50px;
+            }
+
+            .doctorName {
+                font-size: 16px;
+            }
+
+            .doctorCategory {
+                font-size: 13px;
+            }
+
+            .contacBtn {
+                padding: 8px 14px;
+                font-size: 13px;
+            }
         }
     </style>
-  </head>
-  <body> 
+</head>
+<body> 
+
     <header>
         <div class="container">
             <nav>
@@ -261,8 +357,8 @@
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="aboutUs.html">About Us</a></li>
-                    <li  class="dropdown-container">
-                        <a href="#"  class="dropdown-trigger">Services<i class="fa-solid fa-chevron-down arrow-icon"></i></a>
+                    <li class="dropdown-container">
+                        <a href="#" class="dropdown-trigger">Services <i class="fa-solid fa-chevron-down arrow-icon"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="login.html">Consultations</a></li>
                             <li><a href="#">Emergency</a></li>
@@ -274,80 +370,89 @@
             </nav>
         </div>
     </header>
-    <div class="docContainers">
-      <div class="filterPar">
-      <label>Categories:</label>
-      <select id="categoryDrop" class="categoryDrop">
-        <option value="all">All Doctors</option>
-        <option value="General Doctor">General Doctor</option>
-        <option value="Pediatrics">Pediatrics</option>
-        <option value="OB/GYN(Women's Health Doctor)">OB/GYN(Women's Health Doctor)</option>
-        <option value="Psychitry">Psychitry</option>
-        <option value="Internal Medicine">Internal Medicine</option>
-      </select>
-    </div>
-    <ul class="doctorList">
-      <li class="docItems">
-        <div class="profilePics">
-          <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="doctor">
+
+    <main class="container">
+        <div class="docContainers">
+            <div class="filterPar">
+                <label for="categoryDrop">Categories:</label>
+                <select id="categoryDrop" class="categoryDrop">
+                    <option value="all">All Doctors</option>
+                    <option value="General Doctor">General Doctor</option>
+                    <option value="Pediatrics">Pediatrics</option>
+                    <option value="OB/GYN(Women's Health Doctor)">OB/GYN(Women's Health Doctor)</option>
+                    <option value="Psychitry">Psychitry</option>
+                    <option value="Internal Medicine">Internal Medicine</option>
+                </select>
+            </div>
+            
+            <ul class="doctorList">
+                <li class="docItems">
+                    <div class="profilePics">
+                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="doctor">
+                    </div>
+                    <div class="doctorInfo"> 
+                        <div class="doctorName">Dr. John Elan</div>
+                        <div class="doctorCategory">General Doctor</div>
+                    </div>
+                    <a href="consultation-booking.html?name=Dr.+John+Elan">
+                        <button class="contacBtn">Contact</button>
+                    </a>
+                </li>
+                
+                <li class="docItems">
+                    <div class="profilePics">
+                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="doctor">
+                    </div>
+                    <div class="doctorInfo">
+                        <div class="doctorName">Dr. Zainab Ahmed</div>
+                        <div class="doctorCategory">Pediatrics</div>
+                    </div>
+                    <a href="consultation-booking.html?name=Dr.+Zainab+Ahmed">
+                        <button class="contacBtn">Contact</button>
+                    </a>
+                </li>
+                
+                <li class="docItems">
+                    <div class="profilePics">
+                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="doctor">
+                    </div>
+                    <div class="doctorInfo">
+                        <div class="doctorName">Dr. Ifeoma Lawal</div>
+                        <div class="doctorCategory">OB/GYN(Women's Health Doctor)</div>
+                    </div>
+                    <a href="consultation-booking.html?name=Dr.+Ifeoma+Lawal">
+                        <button class="contacBtn">Contact</button>
+                    </a>
+                </li>
+                
+                <li class="docItems">
+                    <div class="profilePics">
+                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="doctor">
+                    </div>
+                    <div class="doctorInfo">
+                        <div class="doctorName">Dr. Bello Sala</div>
+                        <div class="doctorCategory">Psychiatry</div>
+                    </div>
+                    <a href="consultation-booking.html?name=Dr.+Bello+Sala">
+                        <button class="contacBtn">Contact</button>
+                    </a>
+                </li>
+                
+                <li class="docItems">
+                    <div class="profilePics">
+                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="doctor">
+                    </div>
+                    <div class="doctorInfo">
+                        <div class="doctorName">Dr. Fela Musa</div>
+                        <div class="doctorCategory">Internal Medicine</div>
+                    </div>
+                    <a href="consultation-booking.html?name=Dr.+Fela+Musa">
+                        <button class="contacBtn">Contact</button>
+                    </a>
+                </li>
+            </ul>
         </div>
-        <div class="doctorInfo"> 
-          <div class="doctorName">Dr. Johhn Elan</div>
-          <div class="doctorCategory">General Doctor</div>
-        </div>
-        <a href="consultation-booking.html">
-          <button class="contacBtn">Contact</button>
-        </a>
-      </li>
-      <li class="docItems">
-        <div class="profilePics">
-          <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="doctor">
-        </div>
-        <div class="doctorInfo">
-          <div class="doctorName">Dr. Zainab Ahmed </div>
-          <div class="doctorCategory">Pediatrics</div>
-        </div>
-        <a href="consultation-booking.html">
-          <button class="contacBtn">Contact</button>
-        </a>
-      </li>
-      <li class="docItems">
-        <div class="profilePics">
-         <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="doctor">
-        </div>
-        <div class="doctorInfo">
-          <div class="doctorName">Dr. Ifeoma Lawal </div>
-          <div class="doctorCategory">OB/GYN(Women's Health Doctor)</div>
-        </div>
-        <a href="consultation-booking.html">
-          <button class="contacBtn">Contact</button>
-        </a>
-      </li>
-      <li class="docItems">
-        <div class="profilePics">
-          <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="doctor">
-        </div>
-        <div class="doctorInfo">
-          <div class="doctorName">Dr. Bello Sala</div>
-          <div class="doctorCategory">Psychitry</div>
-        </div>
-        <a href="consultation-booking.html">
-          <button class="contacBtn">Contact</button>
-        </a>
-      </li>
-      <li class="docItems">
-        <div class="profilePics">
-          <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="doctor">
-        </div>
-        <div class="doctorInfo">
-          <div class="doctorName">Dr. Fela Musa</div>
-          <div class="doctorCategory">Internal Medicine</div>
-        </div>
-        <a href="consultation-booking.html">
-          <button class="contacBtn">Contact</button>
-        </a>
-      </li>
-    </ul>
-    </div>
-  </body>
+    </main>
+
+</body>
 </html>
