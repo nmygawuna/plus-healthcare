@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Registration Successful - PLUS Healthcare</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://kit.fontawesome.com/999aaab8bd.js" crossorigin="anonymous"></script>
+		<style>
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				background-color: #f4faff;
+				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+				color: #2d3748;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				min-height: 100vh;
+				padding: 40px 20px;
+			}
+
+			.success-container {
+				width: 100%;
+				max-width: 520px;
+				padding: 40px 30px;
+				border-radius: 16px;
+				background-color: #ffffff;
+				box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+				text-align: center;
+			}
+
+			.success-icon {
+				font-size: 4rem;
+				color: #10b981; 
+				margin-bottom: 20px;
+				animation: scaleUp 0.4s ease-out;
+			}
+
+			@keyframes scaleUp {
+				0% { transform: scale(0.8); opacity: 0; }
+				100% { transform: scale(1); opacity: 1; }
+			}
+
+			.title {
+				color: #00695c;
+				font-size: 26px;
+				font-weight: 700;
+				margin-bottom: 12px;
+			}
+
+			.message {
+				color: #718096;
+				font-size: 15px;
+				line-height: 1.6;
+				margin-bottom: 30px;
+			}
+
+			
+			.data-preview-box {
+				background-color: #f8fafc;
+				border: 1px solid #e2e8f0;
+				border-radius: 12px;
+				padding: 20px;
+				margin-bottom: 30px;
+				text-align: left;
+			}
+
+			.data-preview-box h3 {
+				font-size: 14px;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				color: #4a5568;
+				margin-bottom: 12px;
+				border-bottom: 1px solid #e2e8f0;
+				padding-bottom: 6px;
+			}
+
+			.data-item {
+				display: flex;
+				justify-content: space-between;
+				font-size: 14px;
+				margin-bottom: 8px;
+			}
+
+			.data-item:last-child {
+				margin-bottom: 0;
+			}
+
+			.data-label {
+				color: #718096;
+				font-weight: 500;
+			}
+
+			.data-value {
+				color: #2d3748;
+				font-weight: 600;
+			}
+
+			.action-btn {
+				display: block;
+				width: 100%;
+				background-color: #00695c;
+				color: white;
+				text-decoration: none;
+				padding: 14px;
+				border-radius: 8px;
+				font-weight: 600;
+				font-size: 16px;
+				transition: background-color 0.2s ease;
+				box-shadow: 0 4px 12px rgba(0, 105, 92, 0.15);
+			}
+
+			.action-btn:hover {
+				background-color: #004d40;
+			}
+
+			.info-note {
+				font-size: 12px;
+				color: #a0aec0;
+				margin-top: 15px;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="success-container">
+			<div class="success-icon">
+				<i class="fa-solid fa-circle-check"></i>
+			</div>
+			
+			<h1 class="title">Account Created!</h1>
+			<p class="message">
+				Thank you for signing up with PLUS Healthcare. Your application has been processed successfully. 
+			</p>
+
+			<div class="data-preview-box">
+				<h3>Account Details</h3>
+				<div class="data-item">
+					<span class="data-label">Name:</span>
+					<span class="data-value" id="userName">User</span>
+				</div>
+				<div class="data-item">
+					<span class="data-label">Email:</span>
+					<span class="data-value" id="userEmail">N/A</span>
+				</div>
+				<div class="data-item">
+					<span class="data-label">City:</span>
+					<span class="data-value" id="userCity">N/A</span>
+				</div>
+			</div>
+
+			<a href="index.html" class="action-btn">Go to Dashboard</a>
+			
+			<p class="info-note">
+				A confirmation email containing your portal instructions has been dispatched.
+			</p>
+		</div>
+
+		<script>
+			const urlParams = new URLSearchParams(window.location.search);
+			
+			const firstName = urlParams.get('firstname') || '';
+			const middleName = urlParams.get('middlename') || '';
+			const surname = urlParams.get('surname') || '';
+			const email = urlParams.get('email');
+			const city = urlParams.get('city');
+
+		
+			let fullName = `${firstName} ${middleName} ${surname}`.replace(/\s+/g, ' ').trim();
+
+			if (fullName) {
+				document.getElementById('userName').textContent = fullName;
+			}
+			if (email) {
+				document.getElementById('userEmail').textContent = email;
+			}
+			if (city) {
+				document.getElementById('userCity').textContent = city;
+			}
+		</script>
+
+	</body>
+</html>
