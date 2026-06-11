@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscription</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', 'Inter', sans-serif;
+      background: #f0f5f8;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .subscription-card {
+      max-width: 950px;
+      width: 100%;
+      background: white;
+      border-radius: 2rem;
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+    .card-inner {
+      padding: 2rem 2rem 2rem;
+    }
+    .brand {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .brand h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #0b6e4f, #1c8b6e);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .brand p {
+      color: #558b7c;
+      font-size: 0.8rem;
+      margin-top: 0.2rem;
+    }
+    .plans-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      justify-content: center;
+      margin: 1rem 0 1.8rem;
+    }
+    .plan-box {
+      flex: 1;
+      min-width: 260px;
+      background: #ffffff;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      border: 1px solid #deeef3;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02);
+      display: flex;
+      flex-direction: column;
+    }
+    .plan-box.selected {
+      border: 2px solid #0f766e;
+      background: #fefef7;
+    }
+    .plan-name {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #115e59;
+      margin-bottom: 0.3rem;
+    }
+    .plan-price {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #1f6e62;
+      margin: 0.5rem 0;
+    }
+    .plan-price small {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #6fa696;
+    }
+    .plan-desc {
+      font-size: 0.8rem;
+      color: #557d70;
+      border-top: 1px solid #e4f0f3;
+      margin-top: 0.7rem;
+      padding-top: 0.7rem;
+      margin-bottom: 1rem;
+    }
+    .tag {
+      display: inline-block;
+      background: #e5f4ef;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: #0f766e;
+      margin-bottom: 1rem;
+      width: fit-content;
+    }
+    .box-checkout-btn {
+      background: #0f766e;
+      border: none;
+      padding: 0.7rem 1rem;
+      border-radius: 50px;
+      color: white;
+      font-weight: 700;
+      font-size: 0.85rem;
+      width: 100%;
+      margin-top: 0.5rem;
+      text-align: center;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .family-section {
+      background: #f8fdfb;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0 1.5rem;
+      border: 1px solid #d8e9ef;
+    }
+    .family-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #115e59;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 0.2rem;
+    }
+    .family-sub {
+      color: #638d80;
+      font-size: 0.8rem;
+      margin-bottom: 1.2rem;
+    }
+    .recipient-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-end;
+      margin-bottom: 1.2rem;
+    }
+    .form-field {
+      flex: 1;
+      min-width: 150px;
+    }
+    .form-field label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #4b7c6f;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .form-field input,
+    .form-field select {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      border-radius: 50px;
+      border: 1px solid #cbdbe0;
+      background: white;
+      font-family: inherit;
+    }
+    .pay-others-btn {
+      background: #0f766e;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 50px;
+      color: white;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-align: center;
+      display: inline-block;
+      text-decoration: none;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+    .bottom-home {
+      text-align: center;
+      margin-top: 1rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid #e0ecef;
+    }
+    .back-home-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f0f4f7;
+      padding: 0.6rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #1a5c55;
+      border: 1px solid #d4e2e8;
+    }
+    .back-home-link:hover {
+      background: #e6eef2;
+    }
+  </style>
+</head>
+<body>
+
+<div class="subscription-card">
+  <div class="card-inner">
+    <div class="brand">
+    </div>
+    <div class="plans-row">
+      <div class="plan-box selected">
+        <div class="plan-name">Monthly Plan</div>
+        <div class="plan-price">₦9,000 <small>/ month</small></div>
+        <div class="plan-desc">Unlimited chats, video consults, prescription support</div>
+        <div class="tag">⭐ Best for regular care</div>
+        <a href="#" class="box-checkout-btn">Pay</a>
+      </div>
+      <div class="plan-box">
+        <div class="plan-name">One-Time Session</div>
+        <div class="plan-price">₦1,500 <small>/ session</small></div>
+        <div class="plan-desc">Single 30-min consult with a doctor, chat or video</div>
+        <div class="tag">⚡ Pay per visit</div>
+        <a href="#" class="box-checkout-btn">Pay</a>
+      </div>
+    </div>
+    <div class="family-section">
+      <div class="family-title">
+        👥 Pay for others 
+      </div>
+      <div class="family-sub">Add a family member or friend by writing their name, email, and phone number.</div>
+      <div class="recipient-form">
+        <div class="form-field">
+          <label>Full name</label>
+          <input type="text">
+        </div>
+        <div class="form-field">
+          <label>Email address</label>
+          <input type="email">
+        </div>
+        <div class="form-field">
+          <label>Phone number</label>
+          <input type="tel">
+        </div>
+        <div class="form-field">
+          <label>Plan type for them</label>
+          <select>
+            <option>Monthly (₦9,000)</option>
+            <option>One-Time Session (₦1,500)</option>
+          </select>
+        </div>
+      </div>
+      <a href="#" class="pay-others-btn">Pay for this recipient</a>
+    </div>
+    <div class="bottom-home">
+      <a href="#" class="back-home-link">← Back to Homepage</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
